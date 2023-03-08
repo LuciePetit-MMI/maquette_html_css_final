@@ -33,7 +33,7 @@
                 :modules="modules"
               >
                 <swiper-slide v-for="(product, index) in variations.slice(0, 9)" :key="index" class="relative w-fit">
-                  <ProductCard :name="product.name" :price="product.price" :images="product.images"></ProductCard>          
+                  <ProductCard :name="product.name" :price="product.price" :images="product.images" :product="product"></ProductCard>          
                 </swiper-slide>
               </swiper>
               <Button :link="'/ciluzio'" :secondary="true" class="self-center">Toutes nos lampes</Button>

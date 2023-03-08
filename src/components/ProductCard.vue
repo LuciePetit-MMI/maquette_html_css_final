@@ -11,7 +11,7 @@
             </div>
             <div :class="{'hidden': inspiration, 'block': !inspiration }" class="flex flex-row justify-between w-full items-baseline">
                 <p class="font-bold text-white">{{price}} €</p>
-                <Button>Acheter</Button>
+                <Button  @click="addToCart">Acheter</Button>
             </div>
         </div>  
         <div v-if="inspiration" class="relative -z-10">
@@ -72,6 +72,10 @@ export default {
             type: Object,
             default: () => {}
         },
+        product: {
+            type: Object,
+            default: () => {}
+        },
     },
     data(){
         return{
@@ -94,6 +98,9 @@ export default {
                 }
             }
             return '';
+        },
+        addToCart(){
+            this.$store.commit('add', { product:this.product, quantity:1 })
         },
     },
     computed: {

@@ -178,13 +178,6 @@ export default{
         }
     },
     computed: {
-        async getProductData () {
-            this.step = 2;
-            const response = await client.get('wc/v3/products?slug=' + this.slug)
-            this.product = response.data;
-            const productContent = this.product[0]
-            this.configurator = productContent.meta_data[10].value
-        },
         sortedConfigurator(){
             return this.configurator.sort((a, b) => { 
                 return b.layerId - a.layerId
@@ -196,6 +189,13 @@ export default{
             this.step--
             this.customLampe = []
         },
+        async getProductData () {
+            this.step = 2;
+            const response = await client.get('wc/v3/products?slug=' + this.slug)
+            this.product = response.data;
+            const productContent = this.product[0]
+            this.configurator = productContent.meta_data[10].value
+        },
         selectSize(slug){
             this.step = 2
             this.slug = slug
@@ -203,7 +203,7 @@ export default{
             if(slug === 'piccolo') this.nbEtage = 5
             if(slug === 'medio') this.nbEtage = 9
             if(slug === 'grande') this.nbEtage = 12
-
+            this.getProductData()
         },
         changePieces(index){
             this.changePiece = index;
