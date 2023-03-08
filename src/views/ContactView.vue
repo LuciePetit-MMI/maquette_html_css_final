@@ -17,7 +17,7 @@
             </div>
             <div class="hidden laptop:flex flex-col items-center laptop:relative h-full">
                 <h2 class="font-saotorpes text-4xl uppercase text-white text-center z-20 laptop:mt-48"><span>Personnalisez</span></h2>
-                <img src="/src/images/victor-medio.webp" alt="" class="z-10 absolute scale-75 -bottom-[15%]">
+                <img src="../assets/images/gif_ciluzio.gif" alt="" class="z-10 absolute scale-75 -bottom-[15%]">
                 <h2 class="font-saotorpes text-4xl uppercase text-white text-center mt-[-450px] laptop:mt-10"><span>votre lampe</span></h2>
                 <h2 class="font-saotorpes text-4xl uppercase text-white text-center z-20 laptop:mt-10"><span>à l'infini</span></h2>
             </div>
